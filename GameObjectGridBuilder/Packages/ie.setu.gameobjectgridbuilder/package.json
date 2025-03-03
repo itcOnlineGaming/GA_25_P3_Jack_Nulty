@@ -1,0 +1,7 @@
+{
+    "name": "ie.setu.gameobjectgridbuilder",
+    "version": "0.1.0",
+    "displayName": "GameObjectGridBuilder",
+    "description": "A Unity package for building a grid of GameObjects.",
+    "unity" : "2022.3"
+}
