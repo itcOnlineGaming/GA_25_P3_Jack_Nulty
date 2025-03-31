@@ -277,7 +277,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 53261008}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825008131}
+        m_TargetAssemblyTypeName: LoadPart, GameObjectGridBuilder
+        m_MethodName: LoadPart6OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &53261008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,7 +848,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 333734261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825008131}
+        m_TargetAssemblyTypeName: LoadPart, GameObjectGridBuilder
+        m_MethodName: LoadPart4OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &333734261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1638,7 +1662,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 564887787}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825008131}
+        m_TargetAssemblyTypeName: LoadPart, GameObjectGridBuilder
+        m_MethodName: LoadPart5OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &564887787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2071,7 +2107,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 712764183}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825008131}
+        m_TargetAssemblyTypeName: LoadPart, GameObjectGridBuilder
+        m_MethodName: LoadPart2OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &712764183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2265,7 +2313,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 802634471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825008131}
+        m_TargetAssemblyTypeName: LoadPart, GameObjectGridBuilder
+        m_MethodName: LoadPart3OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &802634471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4571,7 +4631,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1550787405}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825008131}
+        m_TargetAssemblyTypeName: LoadPart, GameObjectGridBuilder
+        m_MethodName: LoadPart1OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1550787405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6411,7 +6483,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2073298029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825008131}
+        m_TargetAssemblyTypeName: LoadPart, GameObjectGridBuilder
+        m_MethodName: LoadPart7OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2073298029
 MonoBehaviour:
   m_ObjectHideFlags: 0
