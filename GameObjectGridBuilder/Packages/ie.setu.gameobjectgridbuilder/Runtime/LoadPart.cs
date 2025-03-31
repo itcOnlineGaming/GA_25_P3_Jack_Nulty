@@ -22,7 +22,6 @@ public class LoadPart : MonoBehaviour
     public Vector3 part7Rotation;
 
     public GameObject build;
-    public Button loadPart;
 
     GameObject parts;
 
