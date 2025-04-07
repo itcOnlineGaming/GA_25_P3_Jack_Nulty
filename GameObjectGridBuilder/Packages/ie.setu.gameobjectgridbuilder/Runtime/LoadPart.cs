@@ -13,25 +13,46 @@ public class LoadPart : MonoBehaviour
     public GameObject part6;
     public GameObject part7;
 
-    public Vector3 part1Rotation;
-    public Vector3 part2Rotation;
-    public Vector3 part3Rotation;
-    public Vector3 part4Rotation;
-    public Vector3 part5Rotation;
-    public Vector3 part6Rotation;
-    public Vector3 part7Rotation;
-
     public GameObject build;
 
     GameObject parts;
 
     public static bool createJoint = false;
     bool partHeld = false;
+    bool grabbed = false;
     int timer = 0;
     Vector3 pieceOffset;
+    Vector3 piecePosition;
+    Vector3 spawnPos = new Vector3(-6, 1, 0);
+    float pieceSpawnOffset = 3.0f;
 
     // Update is called once per frame
     void Update()
+    {
+        if (parts != null && partHeld == true)
+        {
+
+            if (Input.touchCount > 0 && timer <= 0)
+            {
+                pieceOffset = new Vector3(0, 0, 0);
+                grabbed = true;
+                Touch touch = Input.GetTouch(0);
+                Vector3 inputPos = touch.position;
+
+                inputPos.z = Camera.main.nearClipPlane;
+                piecePosition = Camera.main.ScreenToWorldPoint(inputPos);
+            }
+            parts.transform.position = new Vector3(Mathf.Round(piecePosition.x) - pieceOffset.x, Mathf.Round(piecePosition.y) + pieceOffset.y, pieceOffset.z);
+        }
+
+        if (partHeld == true && (Input.GetMouseButtonUp(0) && grabbed == true || grabbed == true && (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)) && timer <= 0)
+        {
+            createJoint = true;
+            partHeld = false;
+        }
+    }
+
+    private void FixedUpdate()
     {
         if (timer > 0)
         {
@@ -40,26 +61,6 @@ public class LoadPart : MonoBehaviour
         if (timer < 0)
         {
             timer = 0;
-        }
-
-        if (parts != null && partHeld == true)
-        {
-            Vector3 inputPos = Input.mousePosition;
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-                inputPos = touch.position;
-            }
-            inputPos.z = Camera.main.nearClipPlane;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(inputPos);
-
-            parts.transform.position = new Vector3(Mathf.Round(worldPos.x) - pieceOffset.x, Mathf.Round(worldPos.y) + pieceOffset.y, pieceOffset.z);
-        }
-
-        if (partHeld == true && (Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)) && timer <= 0)
-        {
-            createJoint = true;
-            partHeld = false;
         }
     }
 
@@ -76,12 +77,16 @@ public class LoadPart : MonoBehaviour
                 inputPos = touch.position;
             }
             inputPos.z = Camera.main.nearClipPlane;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition.y += pieceSpawnOffset;
             pieceOffset = new Vector3(0, 0, 0);
+
             parts = Instantiate(part1, build.transform);
-            parts.transform.position = new Vector3(worldPos.x, worldPos.y, 0);
-            parts.transform.rotation = Quaternion.Euler(part1Rotation);
+            parts.transform.position = new Vector3(piecePosition.x, piecePosition.y, 0);
+            parts.transform.rotation = Quaternion.identity;
             parts.transform.localScale = new Vector3(1, 1, 1);
+
+            Input.ResetInputAxes();
         }
     }
 
@@ -98,12 +103,16 @@ public class LoadPart : MonoBehaviour
                 inputPos = touch.position;
             }
             inputPos.z = Camera.main.nearClipPlane;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition.y += pieceSpawnOffset;
             pieceOffset = new Vector3(0, 0, 0);
+
             parts = Instantiate(part2, build.transform);
-            parts.transform.position = new Vector3(worldPos.x, worldPos.y, 0);
-            parts.transform.rotation = Quaternion.Euler(part2Rotation);
+            parts.transform.position = new Vector3(piecePosition.x, piecePosition.y, 0);
+            parts.transform.rotation = Quaternion.identity;
             parts.transform.localScale = new Vector3(1, 1, 1);
+
+            Input.ResetInputAxes();
         }
     }
 
@@ -120,12 +129,16 @@ public class LoadPart : MonoBehaviour
                 inputPos = touch.position;
             }
             inputPos.z = Camera.main.nearClipPlane;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition.y += pieceSpawnOffset;
             pieceOffset = new Vector3(0, 0, 0);
+
             parts = Instantiate(part3, build.transform);
-            parts.transform.position = new Vector3(worldPos.x, worldPos.y, 0);
-            parts.transform.rotation = Quaternion.Euler(part3Rotation);
+            parts.transform.position = new Vector3(piecePosition.x, piecePosition.y, 0);
+            parts.transform.rotation = Quaternion.identity;
             parts.transform.localScale = new Vector3(1, 1, 1);
+
+            Input.ResetInputAxes();
         }
     }
 
@@ -142,12 +155,16 @@ public class LoadPart : MonoBehaviour
                 inputPos = touch.position;
             }
             inputPos.z = Camera.main.nearClipPlane;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition.y += pieceSpawnOffset;
             pieceOffset = new Vector3(0, 0, 0);
+
             parts = Instantiate(part4, build.transform);
-            parts.transform.position = new Vector3(worldPos.x, worldPos.y, 0);
-            parts.transform.rotation = Quaternion.Euler(part4Rotation);
+            parts.transform.position = new Vector3(piecePosition.x, piecePosition.y, 0);
+            parts.transform.rotation = Quaternion.identity;
             parts.transform.localScale = new Vector3(1, 1, 1);
+
+            Input.ResetInputAxes();
         }
     }
 
@@ -164,12 +181,16 @@ public class LoadPart : MonoBehaviour
                 inputPos = touch.position;
             }
             inputPos.z = Camera.main.nearClipPlane;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition.y += pieceSpawnOffset;
             pieceOffset = new Vector3(0, 0, 0);
+
             parts = Instantiate(part5, build.transform);
-            parts.transform.position = new Vector3(worldPos.x, worldPos.y, 0);
-            parts.transform.rotation = Quaternion.Euler(part5Rotation);
+            parts.transform.position = new Vector3(piecePosition.x, piecePosition.y, 0);
+            parts.transform.rotation = Quaternion.identity;
             parts.transform.localScale = new Vector3(1, 1, 1);
+
+            Input.ResetInputAxes();
         }
     }
 
@@ -186,12 +207,16 @@ public class LoadPart : MonoBehaviour
                 inputPos = touch.position;
             }
             inputPos.z = Camera.main.nearClipPlane;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition.y += pieceSpawnOffset;
             pieceOffset = new Vector3(0, 0, 0);
+
             parts = Instantiate(part6, build.transform);
-            parts.transform.position = new Vector3(worldPos.x, worldPos.y, 0);
-            parts.transform.rotation = Quaternion.Euler(part6Rotation);
+            parts.transform.position = new Vector3(piecePosition.x, piecePosition.y, 0);
+            parts.transform.rotation = Quaternion.identity;
             parts.transform.localScale = new Vector3(1, 1, 1);
+
+            Input.ResetInputAxes();
         }
     }
 
@@ -208,12 +233,16 @@ public class LoadPart : MonoBehaviour
                 inputPos = touch.position;
             }
             inputPos.z = Camera.main.nearClipPlane;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition = Camera.main.ScreenToWorldPoint(inputPos);
+            piecePosition.y += pieceSpawnOffset;
             pieceOffset = new Vector3(0, 0, 0);
+
             parts = Instantiate(part7, build.transform);
-            parts.transform.position = new Vector3(worldPos.x, worldPos.y, 0);
-            parts.transform.rotation = Quaternion.Euler(part7Rotation);
+            parts.transform.position = new Vector3(piecePosition.x, piecePosition.y, 0);
+            parts.transform.rotation = Quaternion.identity;
             parts.transform.localScale = new Vector3(1, 1, 1);
+
+            Input.ResetInputAxes();
         }
     }
 }
