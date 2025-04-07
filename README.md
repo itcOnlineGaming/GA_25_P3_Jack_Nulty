@@ -41,11 +41,12 @@ You need to add the component to your project using the Package Manager. Open th
 
 https://github.com/itcOnlineGaming/GA_25_P3_Jack_Nulty.git?path=/GameObjectGridBuilder/Packages/ie.setu.gameobjectgridbuilder#v0.0.1
 
-Note that the URL specifies the complete path to the package and a git tag. The package should now be visible in your project.
+Note that the URL specifies the complete path to the package and a git tag. The package should now be visible in your project. This will be found under the package folder in your project under the name GameObjectGridBuider.
 
 ## Using the component
 ### Basic Grid
 To create a basic grid you need to instantiate a grid and hotbar system.
+To do this you must get the canvas prefab from the package runtime file and drag it into the current scene to add it.
 You then need to apply prefabs from your game or application to each hotbar slot which will create instantations on the click of these buttons to be dragged into grid slots.
 This can be done using touch-screen and mouse clicks.
 ![image](https://github.com/user-attachments/assets/c57b184a-b737-4399-98da-9bd2401428e0)
